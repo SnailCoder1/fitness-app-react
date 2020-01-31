@@ -20,9 +20,9 @@ const StackNavigator = createStackNavigator(
     // SelectGender: SelectGender,
   },
   {
-    // initialRouteName: 'LoginScreen',
+    initialRouteName: 'LoginScreen',
     // initialRouteName: 'RegisterScreen',
-    initialRouteName: 'PasswordInputScreen'
+    // initialRouteName: 'PasswordInputScreen',
   },
 );
 

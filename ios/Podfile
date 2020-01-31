@@ -37,6 +37,10 @@ target 'fitness_master' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  # Pods for fitness_master
+  pod 'Firebase/Core', '~> 6.13.0'
+  pod 'Firebase/Auth', '~> 6.13.0'
+
   target 'fitness_masterTests' do
     inherit! :search_paths
     # Pods for testing

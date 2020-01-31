@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {
   View,
@@ -61,7 +62,37 @@ export default class LoginScreen extends Component {
             style={StyleSheet.container}
             keyboardShouldPersistTaps="handled"
           />
+          <View style={styles.socialWrapper}>
+            <Text style={styles.signinwith}>Sign in with</Text>
+            <View style={styles.socialLogin}>
+              <SocialIcon type="facebook" light />
+              <SocialIcon type="google" light />
+              <SocialIcon type="twitter" light />
+            </View>
+            <Button
+              title="Login"
+              loading={false}
+              loadingProps={{size: 'small', color: 'white'}}
+              buttonStyle={{
+                backgroundColor: '#7265E3',
+                borderRadius: 15,
+              }}
+              titleStyle={{fontWeight: 'bold', fontSize: 23}}
+              containerStyle={{marginVertical: 10, height: 50, width: 300}}
+              onPress={() => console.log('aye')}
+              underlayColor="transparent"
+            />
+          </View>
         </View>
+
+        <TouchableOpacity
+          onPress={() =>
+            this.props.navigation.navigate('ForgotPasswordScreen')
+          }>
+          <Text h5 style={{textAlign: 'center', color: 'blue'}}>
+            Forgot Password?
+          </Text>
+        </TouchableOpacity>
       </KeyboardAvoidingView>
     );
   }
@@ -87,5 +118,14 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: 'white',
     marginBottom: 20,
+  },
+  socialWrapper: {
+    marginTop: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  socialLogin: {
+    flexDirection: 'row',
+    marginTop: 10,
   },
 });

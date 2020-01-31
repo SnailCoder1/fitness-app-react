@@ -2,7 +2,7 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import IntroScreen from '../screens/IntroScreen';
 import LoginScreen from '../screens/LoginScreen';
-// import EmailInputScreen from '../screens/EmailInputScreen';
+import RegisterScreen from '../screens/RegisterScreen';
 // import PasswordInputScreen from '../screens/PasswordInputScreen';
 
 const StackNavigator = createStackNavigator(
@@ -10,7 +10,7 @@ const StackNavigator = createStackNavigator(
     onBoardScreen: {
       screen: IntroScreen,
     },
-    // EmailInputScreen: EmailInputScreen,
+    RegisterScreen: RegisterScreen,
     LoginScreen: LoginScreen,
     // TouchAuthentication: TouchAuthentication,
     // PasswordInputScreen: PasswordInputScreen,
@@ -20,8 +20,9 @@ const StackNavigator = createStackNavigator(
     // SelectGender: SelectGender,
   },
   {
-    initialRouteName: 'LoginScreen',
-  }
+    // initialRouteName: 'LoginScreen',
+    initialRouteName: 'RegisterScreen',
+  },
 );
 
 export default createAppContainer(StackNavigator);

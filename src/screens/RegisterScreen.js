@@ -37,7 +37,7 @@ export default class RegisterScreen extends Component {
                 size={25}
               />
             }
-            placeholder="enter your Email"
+            placeholder="Enter your Email"
             inputContainerStyle={{
               borderWidth: 1,
               borderColor: 'white',

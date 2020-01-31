@@ -3,7 +3,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import IntroScreen from '../screens/IntroScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
-// import PasswordInputScreen from '../screens/PasswordInputScreen';
+import PasswordInputScreen from '../screens/PasswordInputScreen';
 
 const StackNavigator = createStackNavigator(
   {
@@ -12,8 +12,8 @@ const StackNavigator = createStackNavigator(
     },
     RegisterScreen: RegisterScreen,
     LoginScreen: LoginScreen,
+    PasswordInputScreen: PasswordInputScreen,
     // TouchAuthentication: TouchAuthentication,
-    // PasswordInputScreen: PasswordInputScreen,
     // SelectProfileScreen: SelectProfileScreen,
     // SetGoalScreen: SetGoalScreen,
     // CustomizeInterest: CustomizeInterest,
@@ -21,7 +21,8 @@ const StackNavigator = createStackNavigator(
   },
   {
     // initialRouteName: 'LoginScreen',
-    initialRouteName: 'RegisterScreen',
+    // initialRouteName: 'RegisterScreen',
+    initialRouteName: 'PasswordInputScreen'
   },
 );
 

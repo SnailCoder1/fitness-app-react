@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {
   View,
@@ -8,6 +9,9 @@ import {
 import {Text, Icon, Image, Button} from 'react-native-elements';
 
 export default class IntroScreen extends Component {
+  static navigationOptions = {
+    headerShown: false,
+  };
   render() {
     return (
       <View style={styles.container}>
@@ -17,6 +21,37 @@ export default class IntroScreen extends Component {
           <Text h5 style={{textAlign: 'center'}}>
             The best App for track Fitness workout and Meal planner
           </Text>
+        </View>
+        <Image
+          source={require('../assets/image/onboard.jpg')}
+          style={{width: '100%', height: 300}}
+          PlaceholderContent={<ActivityIndicator />}
+        />
+
+        <View style={styles.contentView}>
+          <Button
+            onPress={() => this.props.navigation.navigate('EmailInputscreen')}
+            title="Get started"
+            loading={false}
+            loadingProps={{size: 'small', color: 'white'}}
+            buttonStyle={{
+              backgroundColor: '#7265E3',
+              borderRadius: 5,
+            }}
+            titleStyle={{fontWeight: 'bold', fontSize: 23}}
+            containerStyle={{marginVertical: 10, height: 50, width: 300}}
+            underlayColor="transparent"
+          />
+
+          <Text h4 style={{textAlign: 'center', color: 'grey'}}>
+            Already have an account?
+          </Text>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('LoginScreen')}>
+            <Text h4 style={{textAlign: 'center', color: 'blue'}}>
+              Sign in
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -31,9 +66,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   headerContainer: {
-    top: 30,
+    // top: 30,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 40,
+  },
+  heading: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  contentView: {
+    // marginTop: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

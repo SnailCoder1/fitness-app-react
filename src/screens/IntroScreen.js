@@ -12,6 +12,7 @@ export default class IntroScreen extends Component {
   static navigationOptions = {
     headerShown: false,
   };
+
   render() {
     return (
       <View style={styles.container}>

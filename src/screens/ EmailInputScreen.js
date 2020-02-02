@@ -3,19 +3,14 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, KeyboardAvoidingView, ScrollView} from 'react-native';
 import {Text, Icon, Input, Button, SocialIcon} from 'react-native-elements';
+import firebase from 'react-native-firebase';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 
-export default class RegisterScreen extends Component {
+export default class EmailInputScreen extends Component {
   static navigationOptions = {
     headerShown: false,
   };
-
-  // const SignupSchema = yup.object().shape({
-  //   email: yup.string()
-  //     .email('Invalid email')
-  //     .required('Email is Required'),
-  // });
 
   render() {
     const SignupSchema = Yup.object().shape({
@@ -36,8 +31,10 @@ export default class RegisterScreen extends Component {
           <Formik
             initialValues={{email: ''}}
             onSubmit={values => {
-              alert(JSON.stringify(values));
-              this.props.navigation.navigate('PasswordInputScreen', {email: values.email});
+              // alert(JSON.stringify(values));
+              this.props.navigation.navigate('PasswordInputScreen', {
+                email: values.email,
+              });
             }}
             validationSchema={SignupSchema}>
             {formikProps => (
@@ -76,7 +73,7 @@ export default class RegisterScreen extends Component {
                   autoCorrect={false}
                   keyboardType="email-address"
                   returnKeyType="next"
-                  onChangeText={formikProps.handleChange('email')} 
+                  onChangeText={formikProps.handleChange('email')}
                   ref={input => (this.emailInput = input)}
                   onSubmitEditing={() => {
                     this.passwordInput.focus();

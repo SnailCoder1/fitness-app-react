@@ -155,9 +155,9 @@ export default class PasswordInputScreen extends Component {
                       width: 300,
                     }}
                     onPress={formikProps.handleSubmit}
-                    // onPress={() =>
-                    //   this.props.navigation.navigate('TouchAuthentication')
-                    // }
+                    onPress={() =>
+                      this.props.navigation.navigate('TouchAuthentication')
+                    }
                     underlayColor="transparent"
                   />
                 </View>

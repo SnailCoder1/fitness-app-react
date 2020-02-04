@@ -22,9 +22,9 @@ const StackNavigator = createStackNavigator(
   {
     initialRouteName: 'IntroScreen',
     initialRouteName: 'LoginScreen',
-    initialRouteName: 'EmailInputScreen',
+    // initialRouteName: 'EmailInputScreen',
     // initialRouteName: 'PasswordInputScreen',
-    // initialRouteName: 'HomeScreen'
+    // initialRouteName: 'HomeScreen',
   },
 );
 

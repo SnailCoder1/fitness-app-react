@@ -25,7 +25,9 @@ export default class PasswordInputScreen extends Component {
   state = {
     password: '',
   };
+
   onchange = password => this.setState({password});
+
   signUp = (values, navigation) => {
     this.setState({loading: true});
     let email = this.props.navigation.getParam('email');
@@ -155,9 +157,9 @@ export default class PasswordInputScreen extends Component {
                       width: 300,
                     }}
                     onPress={formikProps.handleSubmit}
-                    onPress={() =>
-                      this.props.navigation.navigate('TouchAuthentication')
-                    }
+                    // onPress={() =>
+                    //   this.props.navigation.navigate('TouchAuthentication')
+                    // }
                     underlayColor="transparent"
                   />
                 </View>

@@ -13,6 +13,7 @@ import firebase from 'react-native-firebase';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {LoginManager, AccessToken} from 'react-native-fbsdk';
+import { GoogleSignin } from '@react-native-community/google-signin';
 
 export default class LoginScreen extends Component {
   static navigationOptions = {
@@ -59,6 +60,26 @@ export default class LoginScreen extends Component {
     setTimeout(() => {
       navigation.navigate('HomeScreen');
     }, 2000);
+  }
+
+  async googleLogin() {
+    try {
+      // add any configuration settings here:
+      await GoogleSignin.configure();
+      const data = await GoogleSignin.signIn();
+      // create a new firebase credential with the token
+      const credential = firebase.auth.GoogleAuthProvider.credential(
+        data.idToken,
+        data.accessToken,
+      );
+      // login with credential
+      const firebaseUserCredential = await firebase
+        .auth()
+        .signInWithCredential(credential);
+      console.log(firebaseUserCredential.user.toJSON());
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   render() {
@@ -148,7 +169,12 @@ export default class LoginScreen extends Component {
                       <TouchableOpacity onPress={() => this.FacebookLogin()}>
                         <SocialIcon type="facebook" light />
                       </TouchableOpacity>
-                      <SocialIcon type="google" light />
+
+                      <TouchableOpacity onPress={() => this.googleLogin()}>
+                        <SocialIcon type="google" light />
+                      </TouchableOpacity>
+
+                      {/* <SocialIcon type="google" light /> */}
                       <SocialIcon type="twitter" light />
                     </View>
                     <Button

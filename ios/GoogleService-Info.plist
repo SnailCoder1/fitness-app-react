@@ -4,6 +4,8 @@
 <dict>
 	<key>CLIENT_ID</key>
 	<string>302501304715-kcpv41ob5j7onpuq76vbf2dac04rh3n6.apps.googleusercontent.com</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.googleusercontent.apps.302501304715-kcpv41ob5j7onpuq76vbf2dac04rh3n6</string>
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.302501304715-kcpv41ob5j7onpuq76vbf2dac04rh3n6</string>
 	<key>API_KEY</key>
@@ -19,15 +21,15 @@
 	<key>STORAGE_BUCKET</key>
 	<string>fitnessapp-86a7c.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:302501304715:ios:5f37b9974443cad7ca378e</string>
 	<key>DATABASE_URL</key>
